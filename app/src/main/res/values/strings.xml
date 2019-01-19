@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">incremental benefit</string>
+    <string name="main_money">المبلغ الرئيسي</string>
+    <string name="increment_value">نسبة الزيادة</string>
+    <string name="years">السنوات</string>
+    <string name="gg">المبلغ بعد الزيادة</string>
+    <string name="calc">احسب المبلغ بعد الزيادة</string>
+</resources>

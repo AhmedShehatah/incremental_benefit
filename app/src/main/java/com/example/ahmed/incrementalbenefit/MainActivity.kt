@@ -11,29 +11,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            calc.setOnClickListener {
-                try{
-                var mainMoney = Integer.parseInt(main.text.toString())
-                var percent = Integer.parseInt(inc.text.toString())
-                var years = Integer.parseInt(yrs.text.toString())
-                var x = 1 + (percent / 100.0)
-                var y = Math.pow(x, years.toDouble()) // method to calc the power
-                /*
-                var sum = 1.0
-                while (years != 0){  // output --> (1+percent/100)^years
-                    sum *= x
-                    --years
-                }
-                */
-                var result = mainMoney * y
-                money.text = result.toString()
-            } catch (ex: Exception) {
-            Toast.makeText(this, ex.message.toString(), Toast.LENGTH_SHORT).show()
+        calc.setOnClickListener {
+            calc()
         }
 
+    }
+
+    fun calc() {
+        try {
+            val mainMoney = Integer.parseInt(main.text.toString())
+            val percent = Integer.parseInt(inc.text.toString())
+            val years = Integer.parseInt(yrs.text.toString())
+            var x = 1 + (percent / 100.0)
+            var y = Math.pow(x, years.toDouble()) // method to calc the power
+            /*
+            var sum = 1.0
+            while (years != 0){  // output --> (1+percent/100)^years
+                sum *= x
+                --years
             }
-
-
-
+            */
+            var result = mainMoney * y
+            money.text = result.toString()
+        } catch (ex: Exception) {
+            Toast.makeText(this, ex.message.toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 }
